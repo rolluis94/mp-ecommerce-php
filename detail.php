@@ -168,10 +168,11 @@
         var url_imagen = '<?php echo $_POST['img'] ?>';
         var total = '<?php echo $_POST['price'] ?>';
         var data = {
+            peticion: "obtener_referencia_mercadopago",
             nombre_producto : nombre,
             descripcion_producto : "Dispositivo móvil de Tienda e-commerce",
             id_producto : "1234",
-            url_imagen : url_imagen ,
+            url_imagen : "https://rolluis94-mp-ecommerce-php.herokuapp.com/"+url_imagen ,
             total : total
         };
 
