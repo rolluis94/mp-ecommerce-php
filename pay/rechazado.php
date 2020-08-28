@@ -149,4 +149,4 @@
 </div>
 
 
-<script src="https://www.mercadopago.com/v2/security.js" view="rechazado"></script>
+<script src="https://www.mercadopago.com/v2/security.js" view="search"></script>

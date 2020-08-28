@@ -159,7 +159,7 @@
 </div>
 
 
-<script src="https://www.mercadopago.com/v2/security.js" view="detail"></script>
+<script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
 <script type="text/javascript">
     
     function pagar(){
