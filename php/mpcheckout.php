@@ -30,7 +30,7 @@
 			$payer->address = array(
 			"street_name" => "Insurgentes Sur",
 			"street_number" => 1602,
-			"zip_code" => 0394​0
+			"zip_code" => "0394​0"
 			);
 			
 
@@ -81,13 +81,8 @@
 			$preference->external_reference = $external_reference;
 
 
-
+			
 			$preference->save();
-
-			$file = fopen("archivo.txt", 'r+');
-			fseek($file, 0, SEEK_END);
-			fwrite($file, json_encode($preference) . PHP_EOL);
-			fclose($file);
 
 			return $preference->init_point;
 
