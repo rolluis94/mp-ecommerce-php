@@ -6,8 +6,10 @@
 	$body = $_POST;
 	$data = json_decode($body);
 	http_response_code(200); // Return 200 OK 
+	echo $_POST["action"];
 
 	echo $data->action;
+
 
 	if ($data->action == 'payment.created'){
 	  $msg = "Tu pago ha sido creado.";
