@@ -14,7 +14,7 @@
 		// Crea un objeto de preferencia
 		$preference = new MercadoPago\Preference();
 
-		echo $external_reference;
+		
 
 		//crear comprador (payer)
 		$payer = new MercadoPago\Payer();
@@ -31,7 +31,7 @@
 		"street_number" => 1602,
 		"zip_code" => "0394​0"
 		);
-
+		echo $external_reference;
 		//agregamos a la referencia
 		$preference->payer = $payer;
 
