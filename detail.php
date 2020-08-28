@@ -184,7 +184,7 @@
                 data: data,
         }).done(function  (respuesta) {
             $("#btn_MP").attr("href", respuesta);
-            $("#btn_MP").click();
+            document.getElementById("btn_MP").click();
         });
 
 

@@ -7,7 +7,8 @@
 
 	//Pago Creado
 	if ($data->action == 'payment.created'){
-	 	$file = fopen("archivo.txt", "w");
+	 	$file = fopen("archivo.txt", 'r+');
+	 	fseek($file, 0, SEEK_END);
 	 	fwrite($file, "***************************************************" . PHP_EOL);
 	 	fwrite($file, "********************PAGO CREADO********************" . PHP_EOL);
 	 	fwrite($file, $json_params . PHP_EOL);
@@ -20,7 +21,8 @@
 
 	//Pago Creado
 	if ($data->action == 'payment.updated'){
-	 	$file = fopen("archivo.txt", "w");
+	 	$file = fopen("archivo.txt", 'r+');
+	 	fseek($file, 0, SEEK_END);
 	 	fwrite($file, "***************************************************" . PHP_EOL);
 	 	fwrite($file, "********************PAGO ACTUALIZADO********************" . PHP_EOL);
 	 	fwrite($file, $json_params . PHP_EOL);
@@ -41,7 +43,8 @@
 
 
 	if ($data->action == 'test.created'){
-	  	$file = fopen("archivo.txt", "w");
+	  	$file = fopen("archivo.txt", 'r+');
+	  	fseek($file, 0, SEEK_END);
 	 	fwrite($file, "***************************************************" . PHP_EOL);
 	 	fwrite($file, "********************PAGO ACTUALIZADO********************" . PHP_EOL);
 	 	fwrite($file, $json_params . PHP_EOL);
