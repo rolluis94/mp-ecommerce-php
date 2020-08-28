@@ -3,6 +3,7 @@
 	CONST ACCESSTOKEN = "APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181"; //cuenta de jesus.19922@hotmail.com para test
 	CONST PUBLICKEY = "APP_USR-d81f7be9-ee11-4ff0-bf4e-20c36981d7bf";
 	CONST INTEGRATOR_ID = "dev_24c65fb163bf11ea96500242ac130004";
+
 	function getReference($id_producto,$nombre_producto,$descripcion_producto,$url_imagen,$total){
 
 		$external_reference = "luis.rodriguez.sys@gmail.com";
@@ -13,6 +14,7 @@
 		// Crea un objeto de preferencia
 		$preference = new MercadoPago\Preference();
 
+		echo $external_reference;
 
 		//crear comprador (payer)
 		$payer = new MercadoPago\Payer();

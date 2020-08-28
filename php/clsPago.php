@@ -43,7 +43,7 @@
 
 
 		static function obtener_referencia_mercadopago($id_producto,$nombre_producto,$descripcion_producto,$url_imagen,$total){
-			echo "string";
+			
 
 			$preferencia = getReference($id_producto,$nombre_producto,$descripcion_producto,$url_imagen,$total);
 
