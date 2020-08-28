@@ -44,7 +44,7 @@
 			$item->description = $descripcion_producto;
 			$item->picture_url = $url_imagen;
 			$item->quantity = 1;
-			$item->external_reference = $external_reference;
+			
 			$item->currency_id = "MXN";
 			$item->unit_price = $total;
 
@@ -75,6 +75,12 @@
 
 			//webhook
 			$preference->notification_url = "https://rolluis94-mp-ecommerce-php.herokuapp.com/notificaciones/notificacion.php";
+			
+
+
+			$preference->external_reference = $external_reference;
+
+
 			
 			$preference->save();
 
