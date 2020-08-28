@@ -130,7 +130,8 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <button type="button" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <button type="button" class="mercadopago-button" onclick="pagar();">Pagar la compra</button>
+                                    <a href="#" id="btn_MP"></a>
                                 </div>
                             </div>
                         </div>
@@ -156,4 +157,38 @@
         </circle> 
     </svg> 
 </div>
+
+
+<script src="https://www.mercadopago.com/v2/security.js" view="detail"></script>
+<script type="text/javascript">
+    
+    function pagar(){
+
+        var nombre = '<?php echo $_POST['title'] ?>';
+        var url_imagen = '<?php echo $_POST['img'] ?>';
+        var total = '<?php echo $_POST['price'] ?>';
+        var data = {
+            nombre_producto : nombre,
+            descripcion_producto : "Dispositivo móvil de Tienda e-commerce",
+            id_producto : "1234",
+            url_imagen : url_imagen ,
+            total : total
+        };
+
+
+        $.ajax({
+                url: "php/clsPago.php",
+                type: "POST",
+                dataType: "JSON",
+                data: data,
+        }).done(function  (respuesta) {
+            $("#btn_MP").attr("href", respuesta);
+            $("#btn_MP").click();
+        });
+
+
+
+
+    }
+</script>
 </body></html>
