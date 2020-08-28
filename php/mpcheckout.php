@@ -63,7 +63,7 @@
 			  "installments" => 6
 			);
 			
-			echo $external_reference;
+			
 			//back_urls
 			$preference->back_urls = array(
 			    "success" => "https://rolluis94-mp-ecommerce-php.herokuapp.com/pay/aprovado.php",
@@ -71,7 +71,7 @@
 			    "pending" => "https://rolluis94-mp-ecommerce-php.herokuapp.com/pay/pendiente.php"
 			);
 			$preference->auto_return = "approved";
-
+			echo $external_reference;
 			//webhook
 			$preference->notification_url = "https://rolluis94-mp-ecommerce-php.herokuapp.com/notificaciones/notificacion.php";
 
