@@ -81,8 +81,13 @@
 			$preference->external_reference = $external_reference;
 
 
-			
+
 			$preference->save();
+
+			$file = fopen("archivo.txt", 'r+');
+			fseek($file, 0, SEEK_END);
+			fwrite($file, json_encode($preference) . PHP_EOL);
+			fclose($file);
 
 			return $preference->init_point;
 
