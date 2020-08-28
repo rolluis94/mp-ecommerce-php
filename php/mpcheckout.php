@@ -32,7 +32,7 @@
 			"street_number" => 1602,
 			"zip_code" => "0394​0"
 			);
-			echo $payer->name;
+			
 
 			//agregamos a la referencia
 			$preference->payer = $payer;
@@ -75,9 +75,9 @@
 
 			//webhook
 			$preference->notification_url = "https://rolluis94-mp-ecommerce-php.herokuapp.com/notificaciones/notificacion.php";
-			
+			echo $preference->auto_return;
 			$preference->save();
-
+			echo $preference->id;
 
 			return $preference;
 
