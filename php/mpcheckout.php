@@ -49,8 +49,8 @@
 
 			//agregamos a la referencia
 			$preference->items = array($item);
+
 			
-			echo $external_reference;
 
 			//Excluimos American Express y atm y 6 cuotas
 			$preference->payment_methods = array(
@@ -63,7 +63,7 @@
 			  "installments" => 6
 			);
 			
-
+			echo $external_reference;
 			//back_urls
 			$preference->back_urls = array(
 			    "success" => "https://rolluis94-mp-ecommerce-php.herokuapp.com/pay/aprovado.php",
