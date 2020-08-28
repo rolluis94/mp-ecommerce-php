@@ -14,7 +14,7 @@
 		// Crea un objeto de preferencia
 		$preference = new MercadoPago\Preference();
 
-		
+
 
 		//crear comprador (payer)
 		$payer = new MercadoPago\Payer();
@@ -31,10 +31,10 @@
 		"street_number" => 1602,
 		"zip_code" => "0394​0"
 		);
-		echo $external_reference;
+
 		//agregamos a la referencia
 		$preference->payer = $payer;
-
+		echo $external_reference;
 		//crear Producto (item)
 		$item = new MercadoPago\Item();
 		$item->id = $id_producto;
@@ -70,7 +70,7 @@
 		$preference->auto_return = "approved";
 
 		//webhook
-		$preference->notification_url ="https://rolluis94-mp-ecommerce-php.herokuapp.com/notificaciones/notificacion.php";
+		$preference->notification_url = "https://rolluis94-mp-ecommerce-php.herokuapp.com/notificaciones/notificacion.php";
 
 		$preference->save();
 		return $preference;
