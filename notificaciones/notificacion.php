@@ -32,7 +32,13 @@
 
 	if ($data->action == 'test.created'){
 	  
-	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$json_params);
+	   $file = fopen("archivo.txt", "w");
+
+		fwrite($file, $json_params . PHP_EOL);
+
+		
+
+		fclose($file);
 	}
 
 	http_response_code(200); // Return 200 OK 
