@@ -43,11 +43,11 @@
 
 
 		static function obtener_referencia_mercadopago($id_producto,$nombre_producto,$descripcion_producto,$url_imagen,$total){
-			
+
 
 			$preferencia = getReference($id_producto,$nombre_producto,$descripcion_producto,$url_imagen,$total);
 
-			return new objRespuesta(true, "OK",  $preferencia->id);
+			return  $preferencia;
 
 		}
 

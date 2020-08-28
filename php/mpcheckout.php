@@ -75,11 +75,10 @@
 
 			//webhook
 			$preference->notification_url = "https://rolluis94-mp-ecommerce-php.herokuapp.com/notificaciones/notificacion.php";
-			echo $preference->auto_return;
+			
 			$preference->save();
-			echo $preference->id;
 
-			return $preference;
+			return $preference->id;
 
 		}catch (Exception $e) {
 
