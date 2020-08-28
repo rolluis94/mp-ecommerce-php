@@ -13,12 +13,12 @@
 
 	if ($data->action == 'payment.created'){
 	  $msg = "Tu pago ha sido creado.";
-	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$body);
+	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$json_params);
 	}
 
 	if ($data->action == 'payment.updated'){
 	  $msg = "Tu pago ha sido creado.";
-	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$body);
+	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$json_params);
 
 	  	switch($data->type) {
 	        case "payment":
@@ -32,7 +32,7 @@
 
 	if ($data->action == 'test.created'){
 	  
-	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$body);
+	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$json_params);
 	}
 
 	http_response_code(200); // Return 200 OK 
