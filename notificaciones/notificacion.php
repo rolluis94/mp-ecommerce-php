@@ -9,6 +9,7 @@
 	
 	echo $json_params;
 
+	echo $data->action
 
 	if ($data->action == 'payment.created'){
 	  $msg = "Tu pago ha sido creado.";
