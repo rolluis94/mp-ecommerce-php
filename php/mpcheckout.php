@@ -67,6 +67,9 @@
 		);
 		$preference->auto_return = "approved";
 
+		//webhook
+		$preference->notification_url ="https://rolluis94-mp-ecommerce-php.herokuapp.com/notificaciones/notificacion.php";
+
 		$preference->save();
 		return $preference;
 	}

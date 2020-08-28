@@ -1,43 +1,54 @@
 <?php
 
 
-
-	$json_params = file_get_contents("php://input");
-	
+	//Obtenemos Json
+	$json_params = file_get_contents("php://input");	
 	$data = json_decode($json_params);
-	
-	
-	echo $json_params;
 
-	echo $data->action;
-
+	//Pago Creado
 	if ($data->action == 'payment.created'){
-	  $msg = "Tu pago ha sido creado.";
-	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$json_params);
+	 	$file = fopen("archivo.txt", "w");
+	 	fwrite($file, "***************************************************" . PHP_EOL);
+	 	fwrite($file, "********************PAGO CREADO********************" . PHP_EOL);
+	 	fwrite($file, $json_params . PHP_EOL);
+		fwrite($file, "***************************************************" . PHP_EOL);
+		fwrite($file, "***************************************************" . PHP_EOL);
+		fwrite($file, "" . PHP_EOL);
+		fwrite($file, "" . PHP_EOL);
+		fclose($file);
 	}
 
+	//Pago Creado
 	if ($data->action == 'payment.updated'){
-	  $msg = "Tu pago ha sido creado.";
-	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$json_params);
-
-	  	switch($data->type) {
+	 	$file = fopen("archivo.txt", "w");
+	 	fwrite($file, "***************************************************" . PHP_EOL);
+	 	fwrite($file, "********************PAGO ACTUALIZADO********************" . PHP_EOL);
+	 	fwrite($file, $json_params . PHP_EOL);
+	 	switch($data->type) {
 	        case "payment":
 	            $payment = MercadoPago\Payment.find_by_id($data->data.id);
+	            fwrite($file, "id_pago: ".$payment->id . PHP_EOL);
+	            fwrite($file, "estatus: ".$payment->status . PHP_EOL);
 	            break;
 	        
     	}
-
+		fwrite($file, "***************************************************" . PHP_EOL);
+		fwrite($file, "***************************************************" . PHP_EOL);
+		fwrite($file, "" . PHP_EOL);
+		fwrite($file, "" . PHP_EOL);
+		fclose($file);
 	}
 
 
 	if ($data->action == 'test.created'){
-	  
-	   $file = fopen("archivo.txt", "w");
-
-		fwrite($file, $json_params . PHP_EOL);
-
-		
-
+	  	$file = fopen("archivo.txt", "w");
+	 	fwrite($file, "***************************************************" . PHP_EOL);
+	 	fwrite($file, "********************PAGO ACTUALIZADO********************" . PHP_EOL);
+	 	fwrite($file, $json_params . PHP_EOL);
+		fwrite($file, "***************************************************" . PHP_EOL);
+		fwrite($file, "***************************************************" . PHP_EOL);
+		fwrite($file, "" . PHP_EOL);
+		fwrite($file, "" . PHP_EOL);
 		fclose($file);
 	}
 
