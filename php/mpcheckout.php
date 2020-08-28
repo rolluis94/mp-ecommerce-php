@@ -76,7 +76,7 @@
 			$preference->notification_url = "https://rolluis94-mp-ecommerce-php.herokuapp.com/notificaciones/notificacion.php";
 
 			$preference->save();
-			echo $external_reference;
+			echo $preference;
 
 			return $preference;
 
