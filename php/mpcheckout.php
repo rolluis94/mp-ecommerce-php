@@ -71,11 +71,12 @@
 			    "pending" => "https://rolluis94-mp-ecommerce-php.herokuapp.com/pay/pendiente.php"
 			);
 			$preference->auto_return = "approved";
-			echo $external_reference;
+
 			//webhook
 			$preference->notification_url = "https://rolluis94-mp-ecommerce-php.herokuapp.com/notificaciones/notificacion.php";
 
 			$preference->save();
+			echo $external_reference;
 
 			return $preference;
 
