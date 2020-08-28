@@ -2,12 +2,12 @@
 
 
 
-
+	$json_params = file_get_contents("php://input");
 	
-	$data = json_decode(file_get_contents('php://input'), true);
-	http_response_code(200); // Return 200 OK 
+	$data = json_decode($json_params);
 	
-	echo $data->action;
+	
+	echo $json_params;
 
 
 	if ($data->action == 'payment.created'){
@@ -33,5 +33,7 @@
 	  
 	  mail("luis.rodriguez.sys@gmail.com","Pago creado",$body);
 	}
+
+	http_response_code(200); // Return 200 OK 
 	
 ?>
