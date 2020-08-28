@@ -3,11 +3,10 @@
 
 
 
-	$body = $_POST;
-	$data = json_decode($body);
+	
+	$data = json_decode(file_get_contents('php://input'), true);
 	http_response_code(200); // Return 200 OK 
-	echo $_POST["action"];
-
+	
 	echo $data->action;
 
 
