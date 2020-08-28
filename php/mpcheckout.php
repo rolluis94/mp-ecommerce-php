@@ -78,7 +78,7 @@
 			
 			$preference->save();
 
-			return $preference->id;
+			return $preference->init_point;
 
 		}catch (Exception $e) {
 
